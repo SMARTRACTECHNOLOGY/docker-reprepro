@@ -9,14 +9,14 @@ http://vincent.bernat.im/en/blog/2014-local-apt-repositories.html
 Build
 -----
 
-To create the image `bbinet/reprepro`, execute the following command in the
-`docker-reprepro` folder:
+To create the image `smartcosmos/reprepro`, execute the following command in the
+`reprepro-docker` folder:
 
-    docker build -t bbinet/reprepro .
+    docker build -t smartcosmos/reprepro .
 
 You can now push the new image to the public registry:
-    
-    docker push bbinet/reprepro
+
+    docker push smartcosmos/reprepro
 
 
 Run
@@ -56,7 +56,7 @@ from `dput` (upload packages) and `apt-get` (download packages) through ssh.
 
 For example:
 
-    $ docker pull bbinet/reprepro
+    $ docker pull smartcosmos/reprepro
 
     $ docker run --name reprepro \
         -v /home/reprepro/data:/data \
@@ -74,7 +74,7 @@ For example:
         -e RPP_ALLOW_in_wheezy="stable>wheezy-dev" \
         -e RPP_ALLOW_in_jessie="stable>jessie-dev" \
         -p 22:22 \
-        bbinet/reprepro
+        smartcosmos/reprepro
 
 Usage
 -----
